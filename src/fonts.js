@@ -1,0 +1,5 @@
+import { Nosifer, Josefin_Sans } from "next/font/google";
+
+export const Nos = Nosifer({
+  subsets: ["latin"],
+});
