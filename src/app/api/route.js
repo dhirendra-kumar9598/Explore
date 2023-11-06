@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 
 const { username, password } = process.env;
-console.log(username);
+
 const conStr = `mongodb+srv://dhirendra:dhiraj123@test.ltrme.mongodb.net/neogymDB?retryWrites=true&w=majority`;
 const conn = async () => {
   // await mongoose.connect("mongodb://localhost:27017/gym");
