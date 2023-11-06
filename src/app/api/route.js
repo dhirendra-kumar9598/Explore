@@ -26,7 +26,11 @@ export async function POST(req) {
   const body = await req.json();
   const { name, email, phone, message } = body;
   if (!name || !email || !phone || !message) {
-    return Response.json({ data: "enter all fields" }, { status: "400" });
+    return Response.json({ data: "enter all fields" }, { status: "400", headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    }, });
   }
   conn();
   const gymModel =
@@ -39,6 +43,10 @@ export async function POST(req) {
   });
   const resp = await data.save();
   if (resp) {
-    return Response.json({ data: "Saved" }, { status: "200" });
+    return Response.json({ data: "Saved" }, { status: "200", headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    }, });
   }
 }
