@@ -13,7 +13,7 @@ export default function Page() {
 
   const handle = async (e) => {
     e.preventDefault();
-    const data = await fetch("http://localhost:3000/api", {
+    const data = await fetch("/api", {
       method: "post",
       headers: {
         "Content-type": "application/json",
